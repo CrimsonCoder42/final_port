@@ -4,12 +4,7 @@ import { Link } from "react-router-dom";
 import { styles } from "../styles";
 import { logo, menu, close } from "../assets";
 
-const Navbar: React.FC = () => {
-  const [active, setActive] = useState<string>("");
-  const [toggle, setToggle] = useState<boolean>(false);
-  const [scrolled, setScrolled] = useState<boolean>(false);
-
-  const navLinks = [
+const navLinks = [
     {
       id: "about",
       title: "About",
@@ -23,6 +18,11 @@ const Navbar: React.FC = () => {
       title: "Contact",
     },
   ];
+
+const Navbar: React.FC = () => {
+  const [active, setActive] = useState<string>("");
+  const [toggle, setToggle] = useState<boolean>(false);
+  const [scrolled, setScrolled] = useState<boolean>(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,21 +58,21 @@ const Navbar: React.FC = () => {
         >
           <img src={logo} alt='logo' className='w-9 h-9 object-contain' />
           <p className='text-white text-[18px] font-bold cursor-pointer flex '>
-            Adrian &nbsp;
-            <span className='sm:block hidden'> | JavaScript Mastery</span>
+            Devin Anderson&nbsp;
+            <span className='sm:block hidden'> | Curiosity, Persistence, Adaptability</span>
           </p>
         </Link>
 
         <ul className='list-none hidden sm:flex flex-row gap-10'>
-          {navLinks.map((nav) => (
+          {navLinks.map((link) => (
             <li
-              key={nav.id}
+              key={link.id}
               className={`${
-                active === nav.title ? "text-white" : "text-secondary"
+                active === link.title ? "text-white" : "text-secondary"
               } hover:text-white text-[18px] font-medium cursor-pointer`}
-              onClick={() => setActive(nav.title)}
+              onClick={() => setActive(link.title)}
             >
-              <a href={`#${nav.id}`}>{nav.title}</a>
+              <a href={`#${link.id}`}>{link.title}</a>
             </li>
           ))}
         </ul>
