@@ -6,22 +6,22 @@ const Hero: FC = () => {
   return (
     <section className={`relative w-full h-screen mx-auto`}>
       <div
-        className={`absolute inset-0 top-[120px] max-w-7xl mx-auto ${styles.paddingX} sm:flex sm:flex-row sm:items-start gap-5`}
+        className={`absolute inset-0 top-[120px] max-w-7xl mx-auto ${styles.paddingX} mdx:flex mdx:flex-row mdx:items-start gap-5`}
       >
-        <div className='flex flex-col justify-center items-center mt-5 mb-5 sm:mb-0'>
+        <div className='flex justify-center mdx:justify-start'>
           <img 
             src={portpic}
             alt="Profile Picture"
-            className='w-40 h-40 sm:w-40 sm:h-40 rounded-full mb-5 sm:mb-0'
+            className='w-40 h-40 rounded-full mb-5 mdx:mb-0'
           />
         </div>
 
-        <div className={`sm:mt-0 ${!styles.heroHeadText ? '' : styles.heroHeadText}`}>
+        <div className={`mdx:mt-0 text-center md:text-left ${!styles.heroHeadText ? '' : styles.heroHeadText}`}>
           <h1 className={`text-white`}>
             Hi, I'm <span className='text-[#e8772e]'>Devin</span>
           </h1>
           <p className={`${styles.heroSubText ? styles.heroSubText : ''} mt-2 text-white-100`}>
-            I develop 3D visuals, user <br className='sm:block hidden' />
+            I develop 3D visuals, user <br className='mdx:block hidden' />
             interfaces and web applications
           </p>
         </div>

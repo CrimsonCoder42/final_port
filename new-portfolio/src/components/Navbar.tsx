@@ -59,11 +59,10 @@ const Navbar: React.FC = () => {
           <img src={logo} alt='logo' className='w-9 h-9 object-contain' />
           <p className='text-white text-[18px] font-bold cursor-pointer flex '>
             Devin Anderson&nbsp;
-            <span className='sm:block hidden'> | Curiosity, Persistence, Adaptability</span>
           </p>
         </Link>
 
-        <ul className='list-none hidden sm:flex flex-row gap-10'>
+        <ul className='list-none hidden mdx:flex flex-row gap-10'>
           {navLinks.map((link) => (
             <li
               key={link.id}
@@ -77,7 +76,7 @@ const Navbar: React.FC = () => {
           ))}
         </ul>
 
-        <div className='sm:hidden flex flex-1 justify-end items-center'>
+        <div className='mdx:hidden flex flex-1 justify-end items-center'>
           <img
             src={toggle ? close : menu}
             alt='menu'
@@ -88,7 +87,7 @@ const Navbar: React.FC = () => {
           <div
             className={`${
               !toggle ? "hidden" : "flex"
-            } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
+            } p-6 violet-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
           >
             <ul className='list-none flex justify-end items-start flex-1 flex-col gap-4'>
               {navLinks.map((nav) => (
@@ -114,3 +113,4 @@ const Navbar: React.FC = () => {
 };
 
 export default Navbar;
+
