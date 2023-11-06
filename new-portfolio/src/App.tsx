@@ -15,10 +15,12 @@ const App: React.FC = () => {
           <Navbar />
           <Hero />
         </div>
-        <About />
-        <Tech />
-        <Works />
-        <div className='relative z-0'>
+        <div className='bg-about-pattern bg-cover bg-no-repeat bg-center'>
+          <About />
+          <Tech />
+        </div>
+        <div className='bg-gradient-custom bg-cover bg-no-repeat bg-center'>
+          <Works />
           <Contact />
         </div>
       </div>

@@ -26,13 +26,10 @@ const Navbar: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      if (scrollTop > 100) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
+    const isScrolled = window.scrollY > 40; 
+    console.log("Scrolled: ", isScrolled); 
+    setScrolled(isScrolled);
+  };
 
     window.addEventListener("scroll", handleScroll);
 
