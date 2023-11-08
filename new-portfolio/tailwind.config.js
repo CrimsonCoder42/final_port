@@ -4,7 +4,7 @@ module.exports = {
     extend: {
       colors: {
         primary: "#050816",
-        'custom-dark': '#804dee',
+        'custom-orange': '#e8772e',
         'custom-darker': '#111132',
 
       },
@@ -13,7 +13,7 @@ module.exports = {
       },
       backgroundImage: {
         'hero-pattern': "url('/src/assets/about.png')",
-        'about-pattern': "linear-gradient(180deg, #111132, #140959)",
+        'about-pattern': "linear-gradient(180deg, #050816, #160666)",
         'gradient-custom': "url('/src/assets/bg.jpeg')",
         'stars-pattern': "url('/src/assets/stars.png')"
       }

@@ -26,8 +26,7 @@ const Navbar: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-    const isScrolled = window.scrollY > 40; 
-    console.log("Scrolled: ", isScrolled); 
+    const isScrolled = window.scrollY > 40;  
     setScrolled(isScrolled);
   };
 
@@ -55,7 +54,7 @@ const Navbar: React.FC = () => {
         >
           <img src={logo} alt='logo' className='w-9 h-9 object-contain' />
           <p className='text-white text-[18px] font-bold cursor-pointer flex '>
-            Devin Anderson&nbsp;
+            DA&nbsp;
           </p>
         </Link>
 
@@ -65,7 +64,7 @@ const Navbar: React.FC = () => {
               key={link.id}
               className={`${
                 active === link.title ? "text-white" : "text-secondary"
-              } hover:text-white text-[18px] font-medium cursor-pointer`}
+              } hover:text-custom-orange text-[18px] font-medium cursor-pointer`}
               onClick={() => setActive(link.title)}
             >
               <a href={`#${link.id}`}>{link.title}</a>
@@ -84,7 +83,7 @@ const Navbar: React.FC = () => {
           <div
             className={`${
               !toggle ? "hidden" : "flex"
-            } p-6 violet-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
+            } p-6 absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
           >
             <ul className='list-none flex justify-end items-start flex-1 flex-col gap-4'>
               {navLinks.map((nav) => (
@@ -92,7 +91,7 @@ const Navbar: React.FC = () => {
                   key={nav.id}
                   className={`font-poppins font-medium cursor-pointer text-[16px] ${
                     active === nav.title ? "text-white" : "text-secondary"
-                  }`}
+                  } hover:text-custom-orange text-[16px] font-medium cursor-pointer`}
                   onClick={() => {
                     setToggle(!toggle);
                     setActive(nav.title);
