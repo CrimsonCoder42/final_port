@@ -4,10 +4,29 @@ type Direction = "left" | "right" | "up" | "down";
 // Define types for possible transition animation types.
 type TransitionType = "spring" | "tween";
 
+// Define types for the toggle states.
+type ToggleState = "opened" | "closed";
+
 // Basic structure for animation variants.
 type Variants = {
   hidden: Record<string, unknown>;
   show: Record<string, unknown>;
+};
+
+// Define a type for the toggle variants to include rotation and scale.
+type ToggleVariants = Record<ToggleState, {
+  rotate: number;
+  scale: number;
+}>
+
+// Define the type for the background variant
+type BackgroundVariants = {
+  open: {
+    backgroundColor: string;
+  };
+  closed: {
+    backgroundColor: string;
+  };
 };
 
 // Enum for ease transitions to prevent typo errors and provide better autocompletion.
@@ -176,6 +195,24 @@ export const staggerContainer = (
   },
 });
 
-// Here's the added textVariants defined earlier with its own unique structure.
-// It's not an export because it was not specified as such in the question.
+// Then define the backgroundVariants with that type
+export const backgroundVariants: BackgroundVariants = {
+  open: {
+    backgroundColor: "rgba(232, 119, 34, 0.3)", // semi-transparent custom orange
+  },
+  closed: {
+    backgroundColor: "#FFFFFF", // white
+  },
+};
+
+export const toggleVariants: ToggleVariants = {
+  opened: {
+    rotate: 180,
+    scale: 1.2,
+  },
+  closed: {
+    rotate: 0,
+    scale: 1,
+  },
+};
 

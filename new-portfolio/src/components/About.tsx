@@ -1,33 +1,32 @@
-import React, { FC, useRef } from 'react';
+import React, { FC, useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { styles } from "../styles";
-import { portpic } from "../assets";
 
 const About: FC = () => {
   const ref = useRef(null);
 
-  // Scroll-related motion values
   const { scrollYProgress } = useScroll({ target: ref });
-  const yStars = useTransform(scrollYProgress, [0, 1], ['-10%', '-50%']);
+  const yStars = useTransform(scrollYProgress, [0, 1], ['0%', '500%']);
+
+  // Log a message every time scrollYProgress changes
+  useEffect(() => {
+    scrollYProgress.onChange(latest => {
+      console.log("Scroll Progress:", latest);
+    });
+  }, [scrollYProgress]);
 
   return (
-    <section className="relative w-full h-screen mx-auto overflow-hidden" ref={ref}>
-      {/* Parallax Background with stars */}
+    <section className="relative w-full min-h-screen mx-auto overflow-hidden" ref={ref}>
       <motion.div
-        className="bg-stars-pattern absolute inset-0 w-full h-full"
+        className="absolute inset-0 w-full h-full bg-blue-500"
         style={{ y: yStars }}
-      />
+      >
+        Debugging Content
+      </motion.div>
 
-      {/* Foreground content */}
-      <div className="relative z-10">
-        <div
-          className={`absolute inset-x-0 top-[120px] bottom-[120px] max-w-7xl mx-auto ${styles.paddingX} mdx:flex mdx:flex-row mdx:items-start gap-5`}
-        >
-          {/* Content here */}
-        </div>
-      </div>
+      {/* Rest of your content */}
     </section>
-  )
+  );
 }
 
 export default About;
+
