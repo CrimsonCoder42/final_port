@@ -11,15 +11,13 @@ const App: React.FC = () => {
   return (
     <BrowserRouter>
       <div className='relative z-0 bg-primary'>
-        <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
+        <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center max-h-800'>
           <Navbar />
           <Hero />
         </div>
         <div className='bg-about-pattern bg-cover bg-no-repeat bg-center'>
           <About />
           <Tech />
-        </div>
-        <div className='bg-gradient-custom bg-cover bg-no-repeat bg-center'>
           <Works />
           <Contact />
         </div>

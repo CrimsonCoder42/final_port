@@ -2,6 +2,9 @@ module.exports = {
   content: ["./src/**/*.{html,ts,tsx}"],
   theme: {
     extend: {
+      maxHeight: {
+      '800': '800px',
+    },
       colors: {
         primary: "#050816",
         'custom-orange': '#e8772e',

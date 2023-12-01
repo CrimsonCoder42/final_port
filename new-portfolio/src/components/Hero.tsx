@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { portpic } from '../assets';
+import { portpic, portpic1, portpic2 } from '../assets';
 import { textVariant, zoomIn, staggerContainer } from '../utils/motion';
 
 const Hero = () => {
@@ -16,13 +16,13 @@ const Hero = () => {
       initial="hidden"
       animate="show"
     >
-      <div className="flex flex-col md:flex-row items-center justify-center gap-20 md:gap-25 lg:gap-30 px-6 md:px-16 w-full h-full max-w-7xl">
+      <div className="flex flex-col md:flex-row items-center justify-center gap-30 md:gap-35 lg:gap-40 px-6 md:px-16 w-full h-full max-w-7xl">
         
         <motion.div className='flex justify-center items-center mb-5 md:mb-0' variants={imageVariants}>
           <motion.img 
-            src={portpic}
+            src={portpic2}
             alt="Profile Picture"
-            className='w-60 h-60 md:w-60 md:h-60 lg:w-80 lg:h-80 rounded-full'
+            className='w-60 h-70 md:w-50 md:h-70 lg:w-80 lg:h-90 '
             variants={imageVariants}
           />
         </motion.div>
