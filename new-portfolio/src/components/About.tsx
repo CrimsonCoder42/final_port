@@ -1,26 +1,43 @@
 import React, { FC, useEffect, useRef } from 'react';
 import { styles } from "../styles";
 import { motion, useScroll, useTransform } from 'framer-motion';
-
-import { webDev, backEnd } from '../assets';
 import { fadeIn, textVariant } from "../utils/motion";
+
+import { 
+  webDev, 
+  backEnd, 
+  css,
+  docker,
+  git,
+  html,
+  javascript,
+  mongodb,
+  node,
+  reactjs,
+  redux,
+  tailwind,
+  typescript, } from '../assets';
+
 
 
 import ServiceCard from './Cards';
 
 const services = [
   {
-    title: "Web Developer",
+    title: "Web Development",
     icon: webDev,
+    tech:[html, css,javascript,reactjs,redux,tailwind,typescript]
   },
   {
-    title: "Backend Developer",
+    title: "Backend Engineering",
     icon: backEnd,
+    tech:[node,mongodb]
   },
   {
-    title: "Content Creator",
-    //icon: creator,
-  },
+    title: "Cloud & DevOps",
+    icon: backEnd,
+    tech:[docker,git]
+  }
 ];
 
 const About: FC = () => {
@@ -43,10 +60,12 @@ const About: FC = () => {
         As a passionate and focused software professional, I excel in roles requiring meticulous attention to detail and critical analysis. Known as a fast learner, I adeptly design software, create comprehensive documentation, and develop innovative engineering approaches. My expertise as a craftsperson in software is evident in my familiarity with advanced technical development techniques, tools, and processes.Let's connect!
       </motion.p>
 
-      <div className='mt-20 flex flex-wrap gap-10'>
+      <div className='mt-10 flex flex-wrap gap-10 justify-center'>
         {services.map((service, index) => (
-          <ServiceCard key={service.title} index={index} {...service} />
-        ))}
+        <div className='w-full md:w-1/2 lg:w-1/3 mx-auto' key={service.title}>
+          <ServiceCard index={index} {...service} />
+        </div>
+  ))}
       </div>
       
     </section>
