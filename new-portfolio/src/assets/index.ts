@@ -19,9 +19,25 @@ import tailwind from "./tailwind.png";
 import typescript from "./typescript.png";
 import aws from "./aws.png";
 import python from "./python.svg";
+import mySql from "./mySql.svg";
+import django from "./django.png";
+import flask from "./flask.png";
+import proxmox from "./proxmox-logo.png";
+import ansible from "./ansible_Logo.png";
+import githubActions from "./githubActions.png";
+import devOps from "./devOps.png";
+import golang from "./golang.png";
 
 export {
+  githubActions,
+  golang,
+  devOps,
   logo,
+  ansible,
+  proxmox,
+  django,
+  flask,
+  mySql,
   menu,
   close,
   portpic, 

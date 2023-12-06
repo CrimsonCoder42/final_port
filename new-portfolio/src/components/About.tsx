@@ -4,7 +4,15 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { fadeIn, textVariant } from "../utils/motion";
 
 import { 
+  golang,
+  githubActions,
+  devOps,
+  ansible,
   aws,
+  proxmox,
+  flask,
+  django,
+  mySql,
   webDev, 
   backEnd, 
   css,
@@ -33,12 +41,12 @@ const services = [
   {
     title: "Backend Engineering",
     icon: backEnd,
-    tech:[node,mongodb, python]
+    tech:[node,mongodb, python, django, flask, mySql, golang]
   },
   {
     title: "Cloud & DevOps",
-    icon: backEnd,
-    tech:[docker,git,aws]
+    icon: devOps,
+    tech:[docker,git,aws, proxmox, ansible, githubActions]
   }
 ];
 
