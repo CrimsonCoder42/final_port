@@ -17,6 +17,8 @@ import reactjs from "./reactjs.png";
 import redux from "./redux.png";
 import tailwind from "./tailwind.png";
 import typescript from "./typescript.png";
+import aws from "./aws.png";
+import python from "./python.svg";
 
 export {
   logo,
@@ -38,5 +40,7 @@ export {
   redux,
   tailwind,
   typescript,
-  
+  aws,
+  python
+
 };

@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { fadeIn, textVariant } from "../utils/motion";
 
 import { 
+  aws,
   webDev, 
   backEnd, 
   css,
@@ -13,6 +14,7 @@ import {
   javascript,
   mongodb,
   node,
+  python,
   reactjs,
   redux,
   tailwind,
@@ -31,12 +33,12 @@ const services = [
   {
     title: "Backend Engineering",
     icon: backEnd,
-    tech:[node,mongodb]
+    tech:[node,mongodb, python]
   },
   {
     title: "Cloud & DevOps",
     icon: backEnd,
-    tech:[docker,git]
+    tech:[docker,git,aws]
   }
 ];
 
@@ -47,7 +49,7 @@ const About: FC = () => {
   const yStars = useTransform(scrollYProgress, [0, 1], ['0%', '500%']);
 
   return (
-    <section className={"relative w-full h-screen mx-auto px-16"}>
+    <section className={"relative w-full min-h-screen mx-auto px-16"}>
       <motion.div variants={textVariant(2)}>
         <p className={styles.sectionSubText}>Introduction</p>
         <h2 className={styles.sectionHeadText}>Overview.</h2>
