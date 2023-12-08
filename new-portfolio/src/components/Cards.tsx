@@ -1,5 +1,5 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { fadeIn } from "../utils/motion";
 
 // Define an interface for the component's props
@@ -10,7 +10,23 @@ interface ServiceCardProps {
   tech: string[];
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ index, title, icon, tech }) => (
+const ServiceCard: React.FC<ServiceCardProps> = ({ index, title, icon, tech }) => { 
+    const [scrolled, setScrolled] = useState<boolean>(false);
+
+      useEffect(() => {
+    const handleScroll = () => {
+    console.log("Scroll event triggered");
+    const isScrolled = window.scrollY > 800;  
+    setScrolled(isScrolled);
+    console.log("Is scrolled:", isScrolled);
+  };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+  
+  return (
   <>
     <motion.div
       variants={fadeIn("right", "spring", index * 0.5, 0.75)}
@@ -20,30 +36,45 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ index, title, icon, tech }) =
       <div
         className='bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'
       >
+        <div className="w-1/2 md:w-1/3 lg:w-1/4 p-2">
         <img
           src={icon}
           alt='web-development'
-          className='w-16 h-16 object-contain'
+          className='w-full h-auto object-contain'
         />
+        </div>
 
         <h3 className='text-white text-[20px] font-bold text-center'>
           {title}
         </h3>
   <div className='flex flex-wrap justify-evenly items-center md:flex-row'>
-  {tech.map((item, idx) => (
-    <div key={idx} className='w-1/3 md:w-1/4 lg:w-1/6 p-2'>
-      <img
-        src={item}
-        alt='web-development'
-        className='w-full h-auto object-contain'
-      />
-    </div>
-  ))}
+  {scrolled && (
+    <AnimatePresence mode="popLayout">
+      {tech.map((item, idx) => (
+        <motion.div 
+          key={idx} 
+          className='w-1/3 md:w-1/4 lg:w-1/6 p-2'
+          initial={{ rotate: "180deg", scale: 0, y: 0 }}
+          animate={{ rotate: "0deg", scale: 1, y: [0, 150, -150, -150, 0] }}
+          exit={{ rotate: "180deg", scale: 0, y: 0 }}
+          transition={{ duration: 1, ease: "backInOut", times: [0, 0.25, 0.5, 0.85, 1] }}
+        >
+          <img
+            src={item}
+            alt='web-development'
+            className='w-full h-auto object-contain'
+          />
+        </motion.div>
+      ))}
+    </AnimatePresence>
+  )}
 </div>
 
         </div>
     </motion.div>
   </>
 );
+
+}
 
 export default ServiceCard;
