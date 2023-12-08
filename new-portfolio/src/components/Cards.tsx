@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { fadeIn } from "../utils/motion";
+import { rotateAnimation } from "../utils/motion2";
 
 // Define an interface for the component's props
 interface ServiceCardProps {
@@ -52,12 +53,11 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ index, title, icon, tech }) =
     <AnimatePresence mode="popLayout">
       {tech.map((item, idx) => (
         <motion.div 
-          key={idx} 
+          key={idx}
           className='w-1/3 md:w-1/4 lg:w-1/6 p-2'
-          initial={{ rotate: "180deg", scale: 0, y: 0 }}
-          animate={{ rotate: "0deg", scale: 1, y: [0, 150, -150, -150, 0] }}
-          exit={{ rotate: "180deg", scale: 0, y: 0 }}
-          transition={{ duration: 1, ease: "backInOut", times: [0, 0.25, 0.5, 0.85, 1] }}
+          initial={rotateAnimation.initial}
+          animate={rotateAnimation.animate}
+          exit={rotateAnimation.exit}
         >
           <img
             src={item}
