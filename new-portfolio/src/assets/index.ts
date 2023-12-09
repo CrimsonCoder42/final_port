@@ -27,9 +27,11 @@ import ansible from "./ansible_Logo.png";
 import githubActions from "./githubActions.png";
 import devOps from "./devOps.png";
 import golang from "./golang.png";
+import blackhole from "./blackhole.webm";
 
 export {
   githubActions,
+  blackhole,
   golang,
   devOps,
   logo,

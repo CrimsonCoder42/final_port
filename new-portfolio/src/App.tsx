@@ -4,7 +4,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
-import Tech from "./components/Tech";
+import SpaceEffect from "./components/SpaceEffect";
 import Works from "./components/Works";
 
 const App: React.FC = () => {
@@ -14,10 +14,10 @@ const App: React.FC = () => {
         <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
           <Navbar />
           <Hero />
+          <SpaceEffect />
         </div>
         <div className='bg-about-pattern bg-cover bg-no-repeat bg-center'>
           <About />
-          <Tech />
           <Works />
           <Contact />
         </div>

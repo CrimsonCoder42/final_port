@@ -16,7 +16,7 @@ module.exports = {
       },
       backgroundImage: {
         'hero-pattern': "url('/src/assets/about.png')",
-        'about-pattern': "linear-gradient(180deg, #050816, #160666)",
+        'about-pattern': "linear-gradient(180deg, #030015, #160666)",
         'gradient-custom': "url('/src/assets/bg.jpeg')",
         'stars-pattern': "url('/src/assets/stars.png')"
       }

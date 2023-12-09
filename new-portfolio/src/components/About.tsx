@@ -57,7 +57,7 @@ const About: FC = () => {
       useEffect(() => {
     const handleScroll = () => {
     console.log("Scroll event triggered");
-    const isScrolled = window.scrollY > 400;  
+    const isScrolled = window.scrollY > 800;  
     setScrolled(isScrolled);
     console.log("Is scrolled:", isScrolled);
   };
