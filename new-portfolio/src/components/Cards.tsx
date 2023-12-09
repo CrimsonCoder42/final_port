@@ -17,7 +17,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ index, title, icon, tech }) =
       useEffect(() => {
     const handleScroll = () => {
     console.log("Scroll event triggered");
-    const isScrolled = window.scrollY > 800;  
+    const isScrolled = window.scrollY > 610;  
     setScrolled(isScrolled);
     console.log("Is scrolled:", isScrolled);
   };
@@ -52,12 +52,12 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ index, title, icon, tech }) =
   {scrolled && (
     <AnimatePresence mode="popLayout">
       {tech.map((item, idx) => (
-        <motion.div 
+        <motion.div
+          whileHover={{ scale: 1.50, rotate: "3.5deg" }} 
           key={idx}
           className='w-1/3 md:w-1/4 lg:w-1/6 p-2'
-          initial={rotateAnimation.initial}
-          animate={rotateAnimation.animate}
-          exit={rotateAnimation.exit}
+          
+          
         >
           <img
             src={item}

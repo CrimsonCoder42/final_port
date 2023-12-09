@@ -1,7 +1,8 @@
-import React, { FC, useEffect, useRef } from 'react';
+import React, { FC, useEffect, useRef, useState } from 'react';
 import { styles } from "../styles";
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { fadeIn, textVariant } from "../utils/motion";
+import { rotateAnimation } from "../utils/motion2";
 
 import { 
   golang,
@@ -51,10 +52,20 @@ const services = [
 ];
 
 const About: FC = () => {
-  const ref = useRef(null);
+    const [scrolled, setScrolled] = useState<boolean>(false);
 
-  const { scrollYProgress } = useScroll({ target: ref });
-  const yStars = useTransform(scrollYProgress, [0, 1], ['0%', '500%']);
+      useEffect(() => {
+    const handleScroll = () => {
+    console.log("Scroll event triggered");
+    const isScrolled = window.scrollY > 400;  
+    setScrolled(isScrolled);
+    console.log("Is scrolled:", isScrolled);
+  };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <section className={"relative w-full min-h-screen mx-auto px-16"}>
@@ -71,12 +82,20 @@ const About: FC = () => {
       </motion.p>
 
       <div className='mt-10 flex flex-wrap gap-10 justify-center'>
-        {services.map((service, index) => (
-        <div className='w-full md:w-1/2 lg:w-1/3 mx-auto' key={service.title}>
-          <ServiceCard index={index} {...service} />
-        </div>
-  ))}
-      </div>
+  <AnimatePresence>
+    {scrolled && services.map((service, index) => (
+      <motion.div 
+        className='w-full md:w-1/2 lg:w-1/3 mx-auto' 
+        key={service.title}
+        initial={rotateAnimation.initial}
+        animate={rotateAnimation.animate}
+        exit={rotateAnimation.exit}
+      >
+        <ServiceCard index={index} {...service} />
+      </motion.div>
+    ))}
+  </AnimatePresence>
+</div>
       
     </section>
   );

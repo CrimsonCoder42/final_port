@@ -11,7 +11,7 @@ export const rotateAnimation: Variants = {
     scale: 1,
     y: [0, 150, -150, -150, 0],
     transition: {
-      duration: 1,
+      duration: 1.5,
       ease: "backInOut",
       times: [0, 0.25, 0.5, 0.85, 1]
     }
@@ -19,6 +19,11 @@ export const rotateAnimation: Variants = {
   exit: {
     rotate: "180deg",
     scale: 0,
-    y: 0
+    y: 0,
+    transition: {
+      duration: 2, // Slower transition for exit, 2 seconds
+      ease: "backInOut",
+      // You can adjust 'times' or other properties as needed
+    }
   }
 };
