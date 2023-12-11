@@ -4,19 +4,17 @@ import { blackhole } from "../assets";
 
 const SpaceEffect = () => {
   return (
-    <section className={`relative w-full h-screen mx-auto`}>
-
+    <div className="fixed top-0 left-0 right-0 bottom-0 z-[-1] overflow-hidden">
       <video
         autoPlay
         muted
         loop
-        className="absolute top-0 h-full w-full object-cover"
+        className="h-full w-full object-cover"
       >
         <source src={blackhole} type="video/webm" />
       </video>
-  
-    </section>
-  )
-}
+    </div>
+  );
+};
 
-export default SpaceEffect
+export default SpaceEffect;

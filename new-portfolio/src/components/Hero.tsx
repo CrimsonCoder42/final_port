@@ -44,7 +44,7 @@ const Hero = () => {
           alt="Profile Picture"
           className='w-1/3 md:w-1/2 md:max-w-none h-auto md:h-70 lg:h-90 object-cover'
           variants={imageVariants}
-          style={{ maxWidth: '800px', maxHeight: '1000px', minHeight: '500px', minWidth: '500px'}}
+          style={{ maxWidth: '600px', maxHeight: '800px', minHeight: '500px', minWidth: '500px'}}
         />
       </motion.div>
     </motion.section>

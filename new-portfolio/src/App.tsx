@@ -6,22 +6,21 @@ import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import SpaceEffect from "./components/SpaceEffect";
 import Works from "./components/Works";
+import Tech from "./components/Tech";
 
 const App: React.FC = () => {
   return (
     <BrowserRouter>
-      <div className='relative z-0 bg-primary'>
-        <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
+      <SpaceEffect />
+      <div className='relative z-10'>
           <Navbar />
           <Hero />
-          <SpaceEffect />
-        </div>
-        <div className='bg-about-pattern bg-cover bg-no-repeat bg-center'>
           <About />
+          <Tech />
           <Works />
           <Contact />
         </div>
-      </div>
+      
     </BrowserRouter>
   );
 }
