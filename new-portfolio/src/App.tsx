@@ -7,20 +7,21 @@ import Navbar from "./components/Navbar";
 import SpaceEffect from "./components/SpaceEffect";
 import Works from "./components/Works";
 import Tech from "./components/Tech";
+import StarsCanvas from "./components/StarsCanvas";
 
 const App: React.FC = () => {
   return (
     <BrowserRouter>
-      <SpaceEffect />
+    <SpaceEffect />
+       {/* <StarsCanvas /> Place StarsCanvas here */}
       <div className='relative z-10'>
-          <Navbar />
-          <Hero />
-          <About />
-          <Tech />
-          <Works />
-          <Contact />
-        </div>
-      
+        <Navbar />
+        <Hero />
+        <About />
+        <Tech />
+        <Works />
+        <Contact />
+      </div>
     </BrowserRouter>
   );
 }
