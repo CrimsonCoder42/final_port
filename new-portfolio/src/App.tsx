@@ -12,8 +12,8 @@ import StarsCanvas from "./components/StarsCanvas";
 const App: React.FC = () => {
   return (
     <BrowserRouter>
-    <SpaceEffect />
-       {/* <StarsCanvas /> Place StarsCanvas here */}
+      <SpaceEffect />
+      <StarsCanvas /> {/* Positioned over SpaceEffect but under other content */}
       <div className='relative z-10'>
         <Navbar />
         <Hero />

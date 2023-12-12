@@ -28,8 +28,10 @@ import githubActions from "./githubActions.png";
 import devOps from "./devOps.png";
 import golang from "./golang.png";
 import blackhole from "./blackhole.webm";
+import aboutPlanet from "./aboutPlanet.png";
 
 export {
+  aboutPlanet,
   githubActions,
   blackhole,
   golang,
