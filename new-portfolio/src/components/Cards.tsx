@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { fadeIn } from "../utils/motion";
-import { rotateAnimation } from "../utils/motion2";
 
 // Define an interface for the component's props
 interface ServiceCardProps {

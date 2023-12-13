@@ -1,5 +1,41 @@
 import { Variants } from "framer-motion";
 
+const slideInFromLeft = (delay: number): Variants => ({
+  hidden: { x: -100, opacity: 0 },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      delay,
+      duration: 0.5,
+    },
+  },
+});
+
+const slideInFromRight = (delay: number): Variants => ({
+  hidden: { x: 100, opacity: 0 },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      delay,
+      duration: 0.5,
+    },
+  },
+});
+
+const slideInFromTop: Variants = {
+  hidden: { y: -100, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      delay: 0.5,
+      duration: 0.5,
+    },
+  },
+};
+
 export const rotateAnimation: Variants = {
   initial: {
     rotate: "180deg",
@@ -21,9 +57,12 @@ export const rotateAnimation: Variants = {
     scale: 0,
     y: 0,
     transition: {
-      duration: 2, // Slower transition for exit, 2 seconds
+      duration: 2,
       ease: "backInOut",
-      // You can adjust 'times' or other properties as needed
     }
   }
 };
+
+// Export the animations for use
+export { slideInFromLeft, slideInFromRight, slideInFromTop };
+

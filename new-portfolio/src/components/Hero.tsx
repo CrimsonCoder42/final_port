@@ -1,50 +1,72 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { portpic2 } from '../assets'; 
-import { textVariant, zoomIn, staggerContainer } from '../utils/motion';
+import React, { FC, useEffect, Suspense, useState } from 'react';
+import { motion, Variants } from 'framer-motion';
+import { portpic2 } from '../assets';
+import { slideInFromLeft, slideInFromRight} from '../utils/motion2';
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
+import Cube from './Cube'; 
+
 
 const Hero = () => {
-  const containerVariants = staggerContainer(0.3);
-  const titleVariants = textVariant(0.2);
-  const subtitleVariants = textVariant(0.3);
-  const imageVariants = zoomIn(0.3);
+
+  // Create variants for the text and image containers
+  const textContainerVariants = slideInFromLeft(0.1);
+  const imageContainerVariants = slideInFromRight(0.6);
 
   return (
     <motion.section
       className="relative w-full h-screen overflow-hidden"
-      variants={containerVariants}
-      initial="hidden"
-      animate="show"
     >
+      {/* Text and Canvas Container with slideInFromLeft animation */}
       <motion.div 
-        className="absolute inset-0 flex flex-col justify-center px-6 md:px-16"
-        variants={titleVariants}
+        className="absolute left-0 bottom-60 flex flex-col items-start justify-center px-6 md:px-16 h-full"
+        style={{ marginLeft: '10%' }}
+        variants={textContainerVariants}
+        initial="hidden"
+        animate="visible"
       >
-        <motion.h1
-          className="text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-black leading-none text-white z-10"
-          variants={titleVariants}
-        >
-          Hi, I'm <span className="text-orange-500">Devin</span>
-        </motion.h1>
+        {/* Text and Canvas Inline */}
+        <div className="flex items-center z-10">
+          <motion.h1
+            className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-none text-white"
+          >
+            Hi, I'm
+          </motion.h1>
+          <Canvas 
+            className="ml-2"
+            style={{ maxHeight: '150px', maxWidth: '150px' }}
+            camera={{ position: [20, 20, 20], fov: 50 }}
+          >
+            <Suspense fallback={null}>
+              <ambientLight intensity={0.5} />
+              <directionalLight position={[3, 2, 1]} />
+              <Cube /> 
+              <OrbitControls enableZoom={false} autoRotate maxDistance={50} />
+            </Suspense>
+          </Canvas>
+        </div>
+
+        {/* Text Below Canvas and Title */}
         <motion.p
-          className="text-lg md:text-lg lg:text-xl leading-tight text-white z-10"
-          variants={subtitleVariants}
+          className="text-lg md:text-lg lg:text-xl leading-tight text-white z-10 mt-2"
         >
-          I engineer sleek, web solutions.
+          I engineer sleek web solutions <br />with meticulous detail.
         </motion.p>
       </motion.div>
 
+      {/* Image Container with slideInFromRight animation */}
       <motion.div 
-        className='absolute bottom-0 left-0 right-0 flex justify-end items-end z-0'
-        variants={imageVariants}
-        style={{marginRight:'10%'}}
+        className='absolute bottom-0 right-0 flex justify-end items-end z-0'
+        variants={imageContainerVariants}
+        initial="hidden"
+        animate="visible"
+        style={{ marginRight: '5%' }}
       >
         <motion.img 
           src={portpic2}
           alt="Profile Picture"
-          className='w-1/3 md:w-1/2 md:max-w-none h-auto md:h-70 lg:h-90 object-cover'
-          variants={imageVariants}
-          style={{ maxWidth: '600px', maxHeight: '800px', minHeight: '500px', minWidth: '500px'}}
+          className='w-1/2 md:w-1/2 md:max-w-none h-auto md:h-70 lg:h-90 object-cover'
+          style={{ maxWidth: '800px', maxHeight: '1000px', minHeight: '450px', minWidth: '450px'}}
         />
       </motion.div>
     </motion.section>
@@ -52,6 +74,10 @@ const Hero = () => {
 };
 
 export default Hero;
+
+
+
+
 
 
 

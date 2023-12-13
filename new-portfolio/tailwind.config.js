@@ -10,6 +10,7 @@ module.exports = {
         'custom-orange': '#e8772e',
         'custom-darker': '#111132',
         'custom-blackhole': '#030015',
+        'custom-purple': '#160666',
 
       },
       screens: {

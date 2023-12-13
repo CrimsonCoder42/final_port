@@ -8,6 +8,8 @@ import Cube from './Cube';
 import { aboutPlanet } from '../assets';
 import { div } from 'three/examples/jsm/nodes/Nodes.js';
 
+import { styles } from "../styles";
+
 const About: FC = () => {
   // move scrolled and setScrolled to App.tsx
   const [scrolled, setScrolled] = useState<boolean>(false);
@@ -31,32 +33,24 @@ const About: FC = () => {
         <motion.img 
           src={aboutPlanet}
           alt="Stylized Background"
-          className="w-full" // This will make the image span the full width of the screen
+          className="absolute top-0 left-0 right-0 w-full z-0" 
           style={{ transform: "rotate(180deg)" }}
         />
-        <div className="flex md:flex-row items-center px-16">
-    
-      {/* Text on the Right */}
-      <div className="w-full md:w-1/2 flex flex-col justify-start">
-        <motion.p
-          variants={fadeIn("left", "spring", 0.1, 1)}
-          className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
-        >
-          As a passionate and focused software professional, I excel in roles requiring meticulous attention to detail and critical analysis. Known as a fast learner, I adeptly design software, create comprehensive documentation, and develop innovative engineering approaches. My expertise as a craftsperson in software is evident in my familiarity with advanced technical development techniques, tools, and processes. Let's connect!
-        </motion.p>
-      </div>
+        <div className={`absolute inset-x-0 top-[120px] bottom-[120px] max-w-7xl mx-auto ${styles.paddingX} mdx:flex mdx:flex-row mdx:items-start gap-5`}>
 
-      {/* Canvas with Cube on the Left */}
-      <Canvas className="w-full md:w-1/2" camera={{ position: [10, 10, 10], fov: 50 }}>
-        <Suspense fallback={null}>
-          <ambientLight intensity={0.5} />
-          <directionalLight position={[3, 2, 1]} />
-          <Cube /> 
-          <OrbitControls enableZoom={true} autoRotate maxDistance={50} />
-        </Suspense>
-      </Canvas>
-      </div>
-    </section>
+          {/* Text on the Right (on large screens) */}
+          <div className="flex-1 flex flex-col justify-start">
+            <motion.p
+              variants={fadeIn("left", "spring", 0.1, 1)}
+              className="text-lg md:text-lg lg:text-xl leading-tight text-white z-10"
+            >
+              As a passionate and focused software professional, I excel in roles requiring meticulous attention to detail and critical analysis. Known as a fast learner, I adeptly design software, create comprehensive documentation, and develop innovative engineering approaches. My expertise as a craftsperson in software is evident in my familiarity with advanced technical development techniques, tools, and processes. Let's connect!
+            </motion.p>
+          </div>
+
+          
+        </div>
+      </section>
 
     </>
   );
