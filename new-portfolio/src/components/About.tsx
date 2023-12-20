@@ -3,7 +3,7 @@ import { OrbitControls, Sphere, MeshDistortMaterial } from "@react-three/drei";
 import { motion } from 'framer-motion';
 import { slideInFromTop, slideInFromLeft, slideInFromRight } from "../utils/motion2";
 import { Canvas } from "@react-three/fiber";
-import { aboutPlanet } from '../assets';
+import { aboutPlanet, astro } from '../assets';
 
 import { div } from 'three/examples/jsm/nodes/Nodes.js';
 
@@ -29,70 +29,75 @@ const About: FC = () => {
   const topDownContainerVariants = slideInFromTop;
 
   return (
-    <>
+  <>
     <section className="relative w-full min-h-screen mx-auto">
-        <motion.img 
-          src={aboutPlanet}
-          alt="Stylized Background"
-          className="absolute top-0 left-0 right-0 w-full z-0" 
-          style={{ transform: "rotate(180deg)", maxHeight: '1000px', minHeight: '450px', minWidth: '450px' }}
-          
-        />
-        <div className={`absolute inset-x-0 top-[120px] bottom-[120px] max-w-7xl mx-auto px-6 mdx:px-16 mdx:flex mdx:flex-row mdx:items-start gap-5`}>
+      <img 
+        src={aboutPlanet}
+        alt="Stylized Background"
+        className="absolute top-0 left-0 right-0 w-full z-0" 
+        style={{ transform: "rotate(180deg)", maxHeight: '1000px', minHeight: '450px', minWidth: '450px' }}
+      />
+<div className={`absolute inset-x-0 top-[40px] bottom-[40px] max-w-7xl mx-auto px-6 mdx:px-16`}>
+  <div className="flex flex-col justify-between items-center w-full h-1/2">
+    {/* Text Section */}
+    <motion.div 
+      className='relative text-center md:text-right'
+      variants={topDownContainerVariants}
+      initial="hidden"
+      animate="visible"
+    >
+      <motion.h1
+        className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-none text-white"
+      >
+        Passion. Focus. Craftsmanship.
+      </motion.h1>
+      <p className={'text-1 md:text-2xl lg:text-3xl xl:text-4xl font-black leading-none text-[#e8772e]'}>
+        I develop 3D visuals, 
+      </p>
+    </motion.div>
 
-          {/* Text and Canvas Inline */}
-          <div className='flex justify-center mdx:justify-start'>
-          
-        </div>
-
-        <div className={'mdx:mt-0 text-center md:text-left '}>
-          <motion.h1
-            className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-none text-white"
-          >
-            Passion. Focus. <span className='text-[#e8772e]'>Craftsmanship.</span>
-          </motion.h1>
-          <p className={'mt-2 text-white-100'}>
-            I develop 3D visuals, user <br className='mdx:block hidden' />
-            interfaces and web applications
-          </p>
-        </div>
-      </div>
+    {/* Canvas and Image Section */}
+    <div className='flex justify-start items-center w-full h-1/2 mt-10 md:mt-0'>
       <motion.div 
-        className='absolute bottom-0 right-0 flex justify-end items-end z-0'
+        className='relative w-full h-full flex justify-center md:justify-start items-center'
         variants={imageContainerVariants}
         initial="hidden"
         animate="visible"
-        style={{ marginRight: '5%' }}
       >
-        <Canvas>
+        <div className='w-1/2 h-full flex justify-center items-center'>
+          <Canvas className='z-10'>
             <Suspense fallback={null}>
               <OrbitControls enableZoom={false} />
               <ambientLight intensity={1} />
               <directionalLight position={[3, 2, 1]} />
-              <Sphere args={[1, 100, 200]} scale={2.4}>
+              <mesh scale={2.5}>
+                <sphereBufferGeometry args={[1, 100, 200]} />
                 <MeshDistortMaterial
                   color="#e8772e"
                   attach="material"
                   distort={0.5}
                   speed={2}
                 />
-              </Sphere>
+              </mesh>
             </Suspense>
           </Canvas>
-        {/* <motion.img 
-          src={portpic2}
-          alt="Profile Picture"
-          className='w-1/2 md:w-1/2 md:max-w-none h-auto md:h-70 lg:h-90 object-cover'
-          style={{ maxWidth: '800px', maxHeight: '1000px', minHeight: '450px', minWidth: '450px'}}
-        /> */}
+          <motion.img 
+            src={astro}
+            alt="rocket man"
+            className='absolute w-1/5 h-auto object-cover z-10'
+            style={{ maxWidth: '640px', maxHeight: '800px', minHeight: '260px', minWidth: '260px'}}
+          />
+        </div>
       </motion.div>
-          
-          
-        
-      </section>
+    </div>
+  </div>
+</div>
 
-    </>
-  );
+
+    </section>
+  </>
+);
+
 }
 
 export default About;

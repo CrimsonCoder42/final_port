@@ -29,8 +29,10 @@ import devOps from "./devOps.png";
 import golang from "./golang.png";
 import blackhole from "./blackhole.webm";
 import aboutPlanet from "./aboutPlanet.png";
+import astro from "./astro.png";
 
 export {
+  astro,
   aboutPlanet,
   githubActions,
   blackhole,
