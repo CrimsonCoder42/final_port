@@ -6,7 +6,7 @@ import { Canvas } from "@react-three/fiber";
 import { aboutPlanet, astro } from '../assets';
 
 const About: FC = () => {
-  const textContainerVariants = slideInFromLeft(0.1);
+  const leftVariant = slideInFromLeft(0.6);
   const imageContainerVariants = slideInFromRight(0.9);
   const topDownContainerVariants = slideInFromTop;
 
@@ -33,18 +33,18 @@ const About: FC = () => {
               <motion.h1
                 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-none text-white"
               >
-                Passion. Focus. Craftsmanship.
+                Passion. <span className='text-[#e8772e]'>Focus</span>. Craftsmanship.
               </motion.h1>
-              <p className={'text-1 md:text-2xl lg:text-3xl xl:text-4xl font-black leading-none text-[#e8772e]'}>
-                I take great pride in my AGILE methodology, which emphasizes significantly improving user experiences. 
-              </p>
+              <p className={'text-1 md:text-2xl lg:text-3xl xl:text-4xl font-black leading-none '}>
+                I take great pride in my <span className='text-[#e8772e]'>AGILE</span> methodology, which <span className='text-[#e8772e]'>emphasizes</span> significantly improving <span className='text-[#e8772e]'>user experiences</span>. 
+              </p> 
             </motion.div>
 
             {/* Canvas and Image Section */}
             <div className='flex justify-start items-center w-full h-1/2 mt-10 md:mt-0'>
               <motion.div 
                 className='relative w-full h-full flex justify-center md:justify-start items-center'
-                variants={imageContainerVariants}
+                variants={leftVariant}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}

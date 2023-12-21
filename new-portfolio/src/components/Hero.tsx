@@ -48,9 +48,11 @@ const Hero = () => {
 
         {/* Text Below Canvas and Title */}
         <motion.p
-          className="text-lg md:text-lg lg:text-xl leading-tight text-white z-10 mt-2"
+          className={'text-1 md:text-2xl lg:text-3xl xl:text-4xl font-black leading-none text-white'}
         >
-          I engineer sleek web solutions <br />with meticulous detail.
+          
+I craft polished <span className='text-[#e8772e]'>web solutions</span><br /> and <span className='text-[#e8772e]'>digital presences</span>.
+           
         </motion.p>
       </motion.div>
 

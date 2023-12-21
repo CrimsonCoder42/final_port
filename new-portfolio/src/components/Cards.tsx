@@ -14,11 +14,11 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ index, title, icon, tech }) =
     <>
       <motion.div
         variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-        className='w-full violet-gradient p-[1px] rounded-[20px] shadow-card'
+        className='w-full p-[1px] rounded-[20px] shadow-card'
+        
       >
         <div
           className='rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'
-          style={{ backgroundColor: 'rgba(255, 255, 255, 0.5)' }} // Semi-transparent background
         >
           <div className="w-1/2 md:w-1/3 lg:w-1/4 p-2">
             <img
