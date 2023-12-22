@@ -33,7 +33,7 @@ const Hero = () => {
             Hi, I'm
           </motion.h1>
           <Canvas 
-            className="ml-2"
+            className="z-10"
             style={{ maxHeight: '150px', maxWidth: '150px' }}
             camera={{ position: [20, 20, 20], fov: 50 }}
           >
@@ -59,9 +59,6 @@ I craft polished <span className='text-[#e8772e]'>web solutions</span><br /> and
       {/* Image Container with slideInFromRight animation */}
       <motion.div 
         className='absolute bottom-0 right-0 flex justify-end items-end z-0'
-        variants={imageContainerVariants}
-        initial="hidden"
-        animate="visible"
         style={{ marginRight: '5%' }}
       >
         <motion.img 
@@ -69,6 +66,8 @@ I craft polished <span className='text-[#e8772e]'>web solutions</span><br /> and
           alt="Profile Picture"
           className='w-1/2 md:w-1/2 md:max-w-none h-auto md:h-70 lg:h-90 object-cover'
           style={{ maxWidth: '800px', maxHeight: '1000px', minHeight: '450px', minWidth: '450px'}}
+          whileInView={{ opacity: 1, transition: { duration: 1.5 } }} // Scroll-triggered animation
+          initial={{ opacity: 0 }} // Initial state before scrolling into view
         />
       </motion.div>
     </motion.section>

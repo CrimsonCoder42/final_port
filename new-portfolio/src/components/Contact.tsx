@@ -26,7 +26,7 @@ const Contact: FC = () => {
         />
         <button 
           type="submit" 
-          className="bg-pink-600 text-white font-bold cursor-pointer rounded py-3"
+          className="bg-custom-orange text-white font-bold cursor-pointer rounded py-3"
         >
           Send
         </button>

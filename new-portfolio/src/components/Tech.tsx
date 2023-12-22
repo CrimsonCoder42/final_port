@@ -29,7 +29,7 @@ import {
 
 
 
-import ServiceCard from './Cards';
+import DisplayCard from './Cards';
 
 const services = [
   {
@@ -59,13 +59,8 @@ const Tech: FC = () => {
             <motion.div 
               className='w-full md:w-1/2 lg:w-1/3 mx-auto' 
               key={service.title}
-              initial={rotateAnimation.initial}
-              whileInView={rotateAnimation.animate}
-              variants={rotateAnimation}
-              exit={rotateAnimation.exit}
-              viewport={{ once: true }}
             >
-              <ServiceCard index={index} {...service} />
+              <DisplayCard index={index} {...service} />
             </motion.div>
           ))}
         </AnimatePresence>

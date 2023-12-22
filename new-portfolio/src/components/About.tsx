@@ -6,9 +6,8 @@ import { Canvas } from "@react-three/fiber";
 import { aboutPlanet, astro } from '../assets';
 
 const About: FC = () => {
-  const leftVariant = slideInFromLeft(0.6);
-  const imageContainerVariants = slideInFromRight(0.9);
-  const topDownContainerVariants = slideInFromTop;
+  const leftVariant = slideInFromLeft(1);
+  const rightVariant = slideInFromRight(0.5);
 
   return (
     <>
@@ -25,7 +24,7 @@ const About: FC = () => {
             {/* Text Section */}
             <motion.div 
               className='relative text-center md:text-right'
-              variants={topDownContainerVariants}
+              variants={rightVariant}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}

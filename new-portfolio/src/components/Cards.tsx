@@ -9,14 +9,10 @@ interface ServiceCardProps {
   tech: string[];
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ index, title, icon, tech }) => {
+const DisplayCard: React.FC<ServiceCardProps> = ({ index, title, icon, tech }) => {
   return (
     <>
-      <motion.div
-        variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-        className='w-full p-[1px] rounded-[20px] shadow-card'
-        
-      >
+      
         <div
           className='rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'
         >
@@ -37,7 +33,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ index, title, icon, tech }) =
               {tech.map((item, idx) => (
                 <motion.div
                   whileHover={{ scale: 1.50, rotate: "3.5deg" }}
-                  whileInView={{ opacity: 1, transition: { duration: 0.5 } }} // Scroll-triggered animation
+                  whileInView={{ opacity: 1, transition: { duration: 2 } }} // Scroll-triggered animation
                   initial={{ opacity: 0 }} // Initial state before scrolling into view
                   key={idx}
                   className='w-1/3 md:w-1/4 lg:w-1/6 p-2'
@@ -52,11 +48,10 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ index, title, icon, tech }) =
             </AnimatePresence>
           </div>
         </div>
-      </motion.div>
     </>
   );
 }
 
-export default ServiceCard;
+export default DisplayCard;
 
 
