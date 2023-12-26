@@ -1,7 +1,7 @@
 import React, { FC, Suspense } from 'react';
 import { OrbitControls, MeshDistortMaterial } from "@react-three/drei";
 import { motion } from 'framer-motion';
-import { slideInFromTop, slideInFromLeft, slideInFromRight } from "../utils/motion2";
+import { slideInFromLeft, slideInFromRight } from "../utils/motion2";
 import { Canvas } from "@react-three/fiber";
 import { aboutPlanet, astro } from '../assets';
 

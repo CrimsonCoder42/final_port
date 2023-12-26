@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { rotateAnimation } from "../utils/motion2";
+import { slideInFromTop } from "../utils/motion2";
 
 import { 
   golang,
@@ -52,17 +52,31 @@ const Tech: FC = () => {
   return (
     <section className={"relative w-full min-h-screen mx-auto px-16"}>
 
-      <div className='mt-10 flex flex-wrap gap-10 justify-center'>
-        <AnimatePresence>
+      <div className='mt-20 flex flex-wrap gap-5'>
+        <div className='w-full md:w-1/2 lg:w-1/2'>
+          <h1 className='text-4xl md:text-6xl font-bold text-white'>Tech Stack</h1>
+          <p className='text-lg md:text-xl text-gray-400 mt-5'>
+            I have experience working with a range of technologies. 
+            I am always learning new things and am excited to learn more.
+          </p>
+        </div>
+        <div className='mt-20 flex flex-wrap gap-5'> 
+          <AnimatePresence>
           {services.map((service, index) => (
             <motion.div 
-              className='w-full md:w-1/2 lg:w-1/3 mx-auto' 
+              className='w-1/2 md:w-1/6 lg:w-1/6 min-w-[260px] mx-auto orange-pink-gradient p-[1px] rounded-[20px] shadow-card' 
+              variants={slideInFromTop}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
               key={service.title}
             >
               <DisplayCard index={index} {...service} />
             </motion.div>
           ))}
         </AnimatePresence>
+
+        </div>
       </div>
       
     </section>

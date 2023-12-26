@@ -42,22 +42,19 @@ body {
 }
 
 .violet-gradient {
-  background: #804dee; /* fallback for old browsers */
+  background: #804dee;
+  background: linear-gradient(-90deg, #804dee 0%, rgba(60, 51, 80, 0) 100%);
   background: -webkit-linear-gradient(
-    to right,
-    #160666,
-    #804dee
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #160666,
-    #804dee
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    -90deg,
+    #804dee 100%,
+    rgba(60, 51, 80, 0) 100%
+  );
 }
 
-.green-pink-gradient {
-  background: linear-gradient(90.13deg, #160666 1.9%, #CAB8FF 50%, #FFD700 97.5%);
-  background: -webkit-linear-gradient(-90.13deg, #160666 1.9%, #CAB8FF 50%, #FFD700 97.5%);
+.orange-pink-gradient {
+  background: "#00cea8";
+  background: linear-gradient(90.13deg, #e8772e 1.9%, #bf61ff 97.5%);
+  background: -webkit-linear-gradient(-90.13deg, #e8772e 1.9%, #bf61ff 97.5%);
 }
 
 .orange-text-gradient {

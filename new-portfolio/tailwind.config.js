@@ -8,7 +8,7 @@ module.exports = {
       colors: {
         primary: "#050816",
         'custom-orange': '#e8772e',
-        'custom-darker': '#111132',
+        tertiary: "#151030",
         'custom-blackhole': '#030015',
         'custom-purple': '#160666',
 

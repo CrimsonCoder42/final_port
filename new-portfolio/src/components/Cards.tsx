@@ -30,12 +30,12 @@ const DisplayCard: React.FC<ServiceCardProps> = ({ title, icon, tech }) => {
     <>
       
         <div
-          className=' min-h-[300px] flex justify-evenly items-center flex-col'
+          className=' min-h-[360px] flex justify-evenly items-center flex-col rounded-[20px] bg-tertiary shadow-card'
         >
-          <div className="justify-center">
+          <div className="py-5 px-12 flex justify-evenly items-center flex-col">
             <Canvas 
             className="z-10"
-            style={{ minHeight: '160px', minWidth: '250px', marginTop: '10px' }}
+            style={{ minHeight: '100px', minWidth: '250px', marginTop: '10px' }}
             camera={{ position: [0, 0, 30], fov: 50 }}
           >
             <Suspense fallback={null}>
@@ -55,7 +55,7 @@ const DisplayCard: React.FC<ServiceCardProps> = ({ title, icon, tech }) => {
                   whileInView={{ opacity: 1, transition: { duration: 2 } }} // Scroll-triggered animation
                   initial={{ opacity: 0 }} // Initial state before scrolling into view
                   key={idx}
-                  className='w-1/6 p-2'
+                  className='w-1/4 p-1'
                 >
                   <img
                     src={item}
