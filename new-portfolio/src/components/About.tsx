@@ -20,7 +20,7 @@ const About: FC = () => {
         />
 
         <div className={`absolute inset-x-0 top-[40px] bottom-[40px] max-w-7xl mx-auto px-6 md:px-16`}>
-          <div className="flex flex-col justify-between items-center w-full h-1/2">
+          <div className="flex flex-col justify-between items-center w-full h-full">
             {/* Text Section */}
             <motion.div 
               className='relative text-center md:text-right'
@@ -40,7 +40,7 @@ const About: FC = () => {
             </motion.div>
 
             {/* Canvas and Image Section */}
-            <div className='flex justify-start items-center w-full h-1/2 mt-10 md:mt-0'>
+            <div className='flex justify-start items-center w-full h-full mt-20 md:mt-0'>
               <motion.div 
                 className='relative w-full h-full flex justify-center md:justify-start items-center'
                 variants={leftVariant}
@@ -48,13 +48,13 @@ const About: FC = () => {
                 whileInView="visible"
                 viewport={{ once: true }}
               >
-                <div className='w-1/2 h-full flex justify-center items-center'>
-                  <Canvas className='z-10'>
+                <div className='w-1/2 h-full flex justify-center items-center mt-20'>
+                  <Canvas className='z-10 w-1/2 h-1/2'>
                     <Suspense fallback={null}>
                       <OrbitControls enableZoom={false} />
                       <ambientLight intensity={1} />
                       <directionalLight position={[3, 2, 1]} />
-                      <mesh scale={2.5}>
+                      <mesh scale={.8}>
                         <sphereBufferGeometry args={[1, 100, 200]} />
                         <MeshDistortMaterial
                           color="#e8772e"

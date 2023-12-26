@@ -12,7 +12,6 @@ import {
   flask,
   django,
   mySql,
-  webDev, 
   backEnd, 
   css,
   docker,
@@ -33,18 +32,18 @@ import DisplayCard from './Cards';
 
 const services = [
   {
-    title: "Web Development",
-    icon: webDev,
+    title: "Web Dev",
+    icon: 'text-icon',
     tech:[html, css,javascript,reactjs,redux,tailwind,typescript]
   },
   {
-    title: "Backend Engineering",
-    icon: backEnd,
+    title: "Backend",
+    icon: 'text-icon',
     tech:[node,mongodb, python, django, flask, mySql, golang]
   },
   {
-    title: "Cloud & DevOps",
-    icon: devOps,
+    title: "DevOps",
+    icon: 'text-icon',
     tech:[docker,git,aws, proxmox, ansible, githubActions]
   }
 ];
