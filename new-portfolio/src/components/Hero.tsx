@@ -5,19 +5,17 @@ import { slideInFromLeft, slideInFromRight} from '../utils/motion2';
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import Cube from './Cube'; 
+import { linkedin } from '../assets';
 
 
 const Hero = () => {
-
-  // Create variants for the text and image containers
+  // Variants for text and image containers
   const textContainerVariants = slideInFromLeft(0.1);
   const imageContainerVariants = slideInFromRight(0.6);
 
   return (
-    <motion.section
-      className="relative w-full h-screen overflow-hidden"
-    >
-      {/* Text and Canvas Container with slideInFromLeft animation */}
+    <motion.section className="relative w-full h-screen overflow-hidden">
+      {/* Text and Canvas Container */}
       <motion.div 
         className="absolute left-0 bottom-60 flex flex-col items-start justify-center px-6 md:px-16 h-full"
         style={{ marginLeft: '10%' }}
@@ -48,26 +46,27 @@ const Hero = () => {
 
         {/* Text Below Canvas and Title */}
         <motion.p
-          className={'text-1 md:text-2xl lg:text-3xl xl:text-4xl font-black leading-none text-white'}
+          className='text-1 md:text-2xl lg:text-3xl xl:text-4xl font-black leading-none text-white'
         >
-          
-I craft polished <span className='text-[#e8772e]'>web solutions</span><br /> and <span className='text-[#e8772e]'>digital presences</span>.
-           
+          I craft polished <span className='text-[#e8772e]'>web solutions</span><br /> and <span className='text-[#e8772e]'>digital presences</span>.
+          <br/>
+          <img src={linkedin} alt="" />
         </motion.p>
       </motion.div>
 
-      {/* Image Container with slideInFromRight animation */}
+      {/* Image Container */}
       <motion.div 
-        className='absolute bottom-0 right-0 flex justify-end items-end z-0'
-        style={{ marginRight: '5%' }}
+        className='absolute bottom-0 right-0 flex justify-end items-end z-0 w-full md:w-1/2 md:mr-10 lg:w-1/2 lg:mr-10'
+        style={{ maxWidth: '60vh' }}
+        variants={imageContainerVariants}
       >
         <motion.img 
           src={portpic2}
           alt="Profile Picture"
-          className='w-1/2 md:w-1/2 md:max-w-none h-auto md:h-70 lg:h-90 object-cover'
-          style={{ maxWidth: '800px', maxHeight: '1000px', minHeight: '450px', minWidth: '450px'}}
-          whileInView={{ opacity: 1, transition: { duration: 1.5 } }} // Scroll-triggered animation
-          initial={{ opacity: 0 }} // Initial state before scrolling into view
+          className='w-full h-auto object-cover ' // Full width, auto height for responsiveness
+          style={{ maxWidth: '70vh'}} // Minimum height for smaller screens
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1, transition: { duration: 1.5 } }}
         />
       </motion.div>
     </motion.section>

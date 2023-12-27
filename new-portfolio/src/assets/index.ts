@@ -30,8 +30,10 @@ import golang from "./golang.png";
 import blackhole from "./blackhole.webm";
 import aboutPlanet from "./aboutPlanet.png";
 import astro from "./astro.png";
+import linkedin from "./LinkedIn_icon.svg";
 
 export {
+  linkedin,
   astro,
   aboutPlanet,
   githubActions,
