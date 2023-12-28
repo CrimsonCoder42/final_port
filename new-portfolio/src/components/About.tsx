@@ -16,7 +16,7 @@ const About: FC = () => {
           src={aboutPlanet}
           alt="Stylized Background"
           className="absolute top-0 left-0 right-0 w-full z-0" 
-          style={{ transform: "rotate(180deg)", maxHeight: '1000px', minHeight: '450px', minWidth: '450px' }}
+          style={{ transform: "rotate(180deg)", maxHeight: '1000px', minHeight: '350px', minWidth: '' }}
         />
 
         <div className={`absolute inset-x-0 top-[40px] bottom-[40px] max-w-7xl mx-auto px-6 md:px-16`}>

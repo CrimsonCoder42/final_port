@@ -14,11 +14,10 @@ const Hero = () => {
   const imageContainerVariants = slideInFromRight(0.6);
 
   return (
-    <motion.section className="relative w-full h-screen overflow-hidden">
+    <motion.section className="relative w-full h-screen mt-20">
       {/* Text and Canvas Container */}
       <motion.div 
-        className="absolute left-0 bottom-60 flex flex-col items-start justify-center px-6 md:px-16 h-full"
-        style={{ marginLeft: '10%' }}
+        className="absolute bottom-60 flex flex-col items-start justify-center px-6 md:px-16 h-full"
         variants={textContainerVariants}
         initial="hidden"
         animate="visible"
@@ -56,7 +55,7 @@ const Hero = () => {
 
       {/* Image Container */}
       <motion.div 
-        className='absolute bottom-0 right-0 flex justify-end items-end z-0 w-full md:w-1/2 md:mr-10 lg:w-1/2 lg:mr-10'
+        className='absolute bottom-0 right-0 flex justify-end items-end z-0 w-full md:w-1/2 lg:w-1/2'
         style={{ maxWidth: '60vh' }}
         variants={imageContainerVariants}
       >

@@ -34,9 +34,9 @@ const Navbar: React.FC = () => {
   };
 
   useEffect(() => {
-    const handleScroll = () => {
-    const isScrolled = window.scrollY > 40;  
-    setScrolled(isScrolled);
+const handleScroll = () => {
+  const isScrolled = window.scrollY > 0;
+  setScrolled(isScrolled);
   };
 
     window.addEventListener("scroll", handleScroll);
@@ -54,8 +54,8 @@ const Navbar: React.FC = () => {
 
   return (
     <nav
-      className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 ${
-        scrolled ? 'bg-primary' : 'bg-transparent'
+      className={`w-full flex items-center py-5 px-6 mdx:px-16 fixed top-0 z-20 ${
+        scrolled ? 'bg-black' : 'bg-transparent'
       }`}
     >
       <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
@@ -89,7 +89,7 @@ const Navbar: React.FC = () => {
           variants={backgroundVariants}
           className={`${
             toggle ? 'flex' : 'hidden'
-          } absolute right-0 top-20 p-6 mx-4 my-2 max-w-[140px] z-10 rounded-xl transition-all duration-300 bg-custom-orange bg-opacity-50 flex-col items-center justify-start`}
+          } absolute right-0 top-20 p-6 mx-4 my-2 min-w-[50%] min-h-[500px] z-10 rounded-xl transition-all duration-300 bg-custom-orange bg-opacity-50 flex-col items-center justify-start`}
         >
           <ul className='list-none flex flex-col gap-4'>
             {navLinks.map((nav) => (

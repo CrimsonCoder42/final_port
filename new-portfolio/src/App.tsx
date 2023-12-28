@@ -14,7 +14,7 @@ const App: React.FC = () => {
     <BrowserRouter>
       <SpaceEffect />
       <StarsCanvas /> {/* Positioned over SpaceEffect but under other content */}
-      <div className='relative z-10'>
+      <div className='relative z-[20] w-full'>
         <Navbar />
         <Hero />
         <About />

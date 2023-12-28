@@ -32,7 +32,7 @@ const DisplayCard: React.FC<ServiceCardProps> = ({ title, icon, tech }) => {
         <div
           className=' min-h-[360px] flex justify-evenly items-center flex-col rounded-[20px] bg-tertiary shadow-card'
         >
-          <div className="py-5 px-12 flex justify-evenly items-center flex-col">
+          <div className="py-5 flex justify-evenly items-center flex-col">
             <Canvas 
             className="z-10"
             style={{ minHeight: '100px', minWidth: '250px', marginTop: '10px' }}
