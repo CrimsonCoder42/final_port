@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { styles } from "../styles";
-import { portpic } from "../assets";
+
+import PlanetCanvas from './planet';
 
 const Works = () => {
   return (
@@ -9,11 +10,9 @@ const Works = () => {
         className={`absolute inset-x-0 top-[120px] bottom-[120px] max-w-7xl mx-auto ${styles.paddingX} mdx:flex mdx:flex-row mdx:items-start gap-5`}
       >
         <div className='flex justify-center mdx:justify-start'>
-          <img 
-            src={portpic}
-            alt="Profile Picture"
-            className='w-40 h-40 rounded-full mb-5 mdx:mb-0'
-          />
+          <div className='w-full h-full' style={{ width: '100%', height: '60vh' }}>
+            <PlanetCanvas />
+          </div>
         </div>
 
         <div className={`mdx:mt-0 text-center md:text-left ${!styles.heroHeadText ? '' : styles.heroHeadText}`}>

@@ -5,7 +5,7 @@ import { slideInFromLeft, slideInFromRight} from '../utils/motion2';
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import Cube from './Cube'; 
-import { linkedin } from '../assets';
+import { linkedin, github } from '../assets';
 
 
 const Hero = () => {
@@ -14,7 +14,7 @@ const Hero = () => {
   const imageContainerVariants = slideInFromRight(0.6);
 
   return (
-    <motion.section className="relative w-full h-screen mt-20">
+    <motion.section className="relative w-full h-screen mt-auto">
       {/* Text and Canvas Container */}
       <motion.div 
         className="absolute bottom-60 flex flex-col items-start justify-center px-6 md:px-16 h-full"
@@ -49,7 +49,15 @@ const Hero = () => {
         >
           I craft polished <span className='text-[#e8772e]'>web solutions</span><br /> and <span className='text-[#e8772e]'>digital presences</span>.
           <br/>
-          <img src={linkedin} alt="" />
+          <div className='w-1/4 flex flex-row items-start gap-1 justify-center'>
+            <a className='w-full' href="https://www.linkedin.com/in/devin-anderson-31308b59/" target="_blank" rel="noopener noreferrer">
+              <img className='w-full' src={linkedin} alt="LinkedIn" />
+            </a>
+            <a className='w-full' href="https://github.com/CrimsonCoder42" target="_blank" rel="noopener noreferrer">
+              <img className='w-full' src={github} alt="GitHub" />
+            </a>
+          </div>
+
         </motion.p>
       </motion.div>
 

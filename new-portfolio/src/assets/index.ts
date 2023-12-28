@@ -31,8 +31,10 @@ import blackhole from "./blackhole.webm";
 import aboutPlanet from "./aboutPlanet.png";
 import astro from "./astro.png";
 import linkedin from "./LinkedIn_icon.svg";
+import github from "./github.png";
 
 export {
+  github,
   linkedin,
   astro,
   aboutPlanet,
