@@ -16,7 +16,7 @@ interface ServiceCardProps {
                 //add different shapes and check  the lighting of the canvas     
 const DisplayCard: React.FC<ServiceCardProps> = ({ title, icon, tech }) => {
 
-  const renderShape = (icon, title) => {
+  const renderShape = (icon: string, title: string ) => {
     switch(icon) {
       case 'text-icon':
         return <Text3D text={title}/>;

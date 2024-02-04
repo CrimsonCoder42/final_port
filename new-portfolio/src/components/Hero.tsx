@@ -4,7 +4,7 @@ import { portpic2 } from '../assets';
 import { slideInFromLeft, slideInFromRight} from '../utils/motion2';
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import Cube from './Cube'; 
+import Cube from './threeDComp/Cube';
 import { linkedin, github } from '../assets';
 
 
@@ -23,24 +23,20 @@ const Hero = () => {
         animate="visible"
       >
         {/* Text and Canvas Inline */}
-        <div className="flex items-center z-10">
+        <div className="flex items-center mt-20 z-10">
           <motion.h1
             className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-none text-white"
           >
             Hi, I'm
           </motion.h1>
-          <Canvas 
+          <Canvas
             className="z-10"
             style={{ maxHeight: '150px', maxWidth: '150px' }}
             camera={{ position: [20, 20, 20], fov: 50 }}
           >
-            <Suspense fallback={null}>
-              <ambientLight intensity={0.5} />
-              <directionalLight position={[3, 2, 1]} />
               <Cube /> 
-              <OrbitControls enableZoom={false} autoRotate maxDistance={50} />
-            </Suspense>
-          </Canvas>
+              
+          </Canvas>  
         </div>
 
         {/* Text Below Canvas and Title */}
